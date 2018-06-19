@@ -63,13 +63,29 @@ public class RetrofitUtils implements HttpUtils {
     //一般的网络请求封装
     @Override
     public void GetRequest(String url, HttpResultCallBack callBack) {
+        //具体操作
+        RetrofitApi api=retrofit.create(RetrofitApi.class);
         switch (url){
             case RetrofitApi.Home:
-                RetrofitApi api=retrofit.create(RetrofitApi.class);
+
+                break;
+
         }
     }
     @Override
     public void PostRequest(String url, Map<String, String> head, HttpResultCallBack callBack) {
+        //具体操作
+        RetrofitApi api=retrofit.create(RetrofitApi.class);
+        switch (url){
+            case RetrofitApi.Home:
+
+                break;
+
+        }
+
+
+
+
 
     }
 
