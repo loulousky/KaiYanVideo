@@ -14,10 +14,13 @@ import com.bumptech.glide.request.target.Target
  * Created by admin on 2018/6/19.
  * Glide图片加载工具类
  */
-public class GildUtils:ImageUtil(){
+public class GildUtils(context:Context):ImageUtil(context){
     private lateinit var context:Context;
-    override fun Init(context: Context) {
+    init {
         this.context=context;
+    }
+    override fun Init(context: Context) {
+
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
