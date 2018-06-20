@@ -13,9 +13,10 @@ import me.yokeyword.fragmentation.SupportFragment
 abstract  class BaseFragment:SupportFragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+       
         var view:View= inflater!!.inflate(setLayout(),container,false);
         BindView(savedInstanceState,view)
+        return  view
     }
 
     abstract fun setLayout():Int;

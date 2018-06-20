@@ -1,7 +1,6 @@
 package kaiyan.lh.cn.kaiyanvideo
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import me.yokeyword.fragmentation.SupportActivity
 
 /**
@@ -10,11 +9,13 @@ import me.yokeyword.fragmentation.SupportActivity
  */
 abstract class BaseAcvitity:SupportActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(setLayout())
-        Bindview(savedInstanceState);
+        Bindview(savedInstanceState)
     }
+
+
 
 
     /**

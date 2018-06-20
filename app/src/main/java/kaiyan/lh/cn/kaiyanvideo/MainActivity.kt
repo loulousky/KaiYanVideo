@@ -1,35 +1,22 @@
 package kaiyan.lh.cn.kaiyanvideo
 
 import android.os.Bundle
+import kaiyan.lh.cn.kaiyanvideo.view.HomeFragment
 
 class MainActivity : BaseAcvitity() {
+
+
     override fun setLayout(): Int {
-     return R.layout.activity_main
+        return R.layout.activity_main
     }
 
     override fun Bindview(savedInstanceState: Bundle?) {
-
-    }
-
-
-    override fun onBackPressedSupport() {
-
-
-            val topFragment = topFragment
-
-            // 主页的Fragment
-//            if (topFragment is BaseMainFragment) {
-//
-//            }
-
-            if (supportFragmentManager.backStackEntryCount > 1) {
-                //不是主页FRAGMENT 那么此fragment出栈
-                pop()
-
-            } else {
-              //双击退出逻辑
-            }
+        val myclass: Class<HomeFragment> = HomeFragment::class.java
+        //设置根Fragment
+        if (findFragment(myclass) == null) {
+            loadRootFragment(R.id.fl_container, HomeFragment())  //load root Fragment
         }
 
+    }
 
 }

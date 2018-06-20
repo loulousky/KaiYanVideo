@@ -1,6 +1,6 @@
 package kaiyan.lh.cn.kaiyanvideo
 
-import android.app.Application
+import android.support.multidex.MultiDexApplication
 import kaiyan.lh.cn.kaiyanvideo.HttporImage.HttpManager
 import kaiyan.lh.cn.kaiyanvideo.HttporImage.RetrofitUtils
 import me.yokeyword.fragmentation.Fragmentation
@@ -10,7 +10,7 @@ import me.yokeyword.fragmentation.helper.ExceptionHandler
 /**
  * Created by admin on 2018/6/15.
  */
-class MainApplication :Application(){
+class MainApplication :MultiDexApplication(){
     companion object {
         lateinit var  myapp:MainApplication;
     }
