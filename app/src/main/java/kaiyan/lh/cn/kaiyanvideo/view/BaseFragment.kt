@@ -1,10 +1,13 @@
 package kaiyan.lh.cn.kaiyanvideo.view
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import me.yokeyword.fragmentation.SupportFragment
+
+
 
 /**
  * Created by admin on 2018/6/19.
@@ -12,8 +15,9 @@ import me.yokeyword.fragmentation.SupportFragment
  */
 abstract  class BaseFragment:SupportFragment() {
 
+    lateinit var typeface:Typeface;
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-       
+        typeface= Typeface.createFromAsset(_mActivity.getAssets(), "Lobster-1.4.otf")
         var view:View= inflater!!.inflate(setLayout(),container,false);
         BindView(savedInstanceState,view)
         return  view

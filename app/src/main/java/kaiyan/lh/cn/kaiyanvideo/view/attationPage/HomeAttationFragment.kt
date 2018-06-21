@@ -1,66 +1,57 @@
-package kaiyan.lh.cn.kaiyanvideo.view.mainpage
-
+package kaiyan.lh.cn.kaiyanvideo.view.attationPage
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
-import com.hwangjr.rxbus.RxBus
 import kaiyan.lh.cn.kaiyanvideo.R
 import kaiyan.lh.cn.kaiyanvideo.view.BaseFragment
+import kaiyan.lh.cn.kaiyanvideo.view.SearchFragment
 import kaiyan.lh.cn.kaiyanvideo.view.adapter.HomeMainPageAdapter
-import kaiyan.lh.cn.kaiyanvideo.view.anniation.Anniation
-import kotlinx.android.synthetic.main.fragment_home_main.view.*
+import kotlinx.android.synthetic.main.fragment_home_attation.view.*
 import java.util.*
-
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeMainFragment.newInstance] factory method to
+ * Activities that contain this fragment must implement the
+ * [HomeAttationFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [HomeAttationFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeMainFragment : BaseFragment() {
+class HomeAttationFragment : BaseFragment() {
 
-    val mTitles = arrayOf("发现", "推荐", "日报", "广告", "生活", "动画", "搞笑",
-            "开胃", "创意", "运动", "音乐", "萌宠", "剧情", "科技", "旅行", "影视",
-            "记录", "游戏", "综艺", "时尚", "集锦")
+    val mTitles = arrayOf("作品", "动态")
 
     var mFragments = ArrayList<Fragment>();
 
+
     override fun setLayout(): Int {
-        return R.layout.fragment_home_main
+
+        return R.layout.fragment_home_attation
     }
 
     override fun BindView(savedInstanceState: Bundle?, rootview: View) {
-
-        for (i in 0..mTitles.size - 1) {
-            mFragments.add(HomeMainListFragment.newInstance(mTitles[i],"i"+i))//添加Fragment
-        }
+        rootview.text_title.setTypeface(typeface);//设置字体
+        mFragments.add(WorkFragment.newInstance())
+        mFragments.add(NewEventsFragment.newInstance())
         rootview.viewPager.adapter = HomeMainPageAdapter(childFragmentManager, mFragments, mTitles)
         rootview.sliding_layout.setViewPager(rootview.viewPager, mTitles)
         rootview.sliding_layout.setIndicatorWidthEqualTitle(true)
         rootview.mode_btn.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
-
-                RxBus.get().post(Anniation.CLASSIFY)
-
-
+                start(PublicFragment.newInstance())//发布
             }
         })
-
         rootview.search_btn.setOnClickListener {
-           RxBus.get().post(Anniation.SEARCH)
+            start(SearchFragment.newInstance())//搜索
         }
-
-
     }
-
     companion object {
-        fun newInstance(): HomeMainFragment {
-            val fragment = HomeMainFragment()
+        fun newInstance(): HomeAttationFragment {
+            val fragment = HomeAttationFragment()
             val args = Bundle()
             fragment.arguments = args
             return fragment
         }
     }
-
 }// Required empty public constructor

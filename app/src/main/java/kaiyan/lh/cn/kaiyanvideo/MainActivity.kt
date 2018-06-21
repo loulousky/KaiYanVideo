@@ -17,6 +17,7 @@ class MainActivity : BaseAcvitity() {
             loadRootFragment(R.id.fl_container, HomeFragment())  //load root Fragment
         }
 
+
     }
 
 }
