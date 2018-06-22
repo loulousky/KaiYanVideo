@@ -3,6 +3,7 @@ package kaiyan.lh.cn.kaiyanvideo.view.mainpage
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.View
 import com.hwangjr.rxbus.RxBus
 import kaiyan.lh.cn.kaiyanvideo.R
@@ -41,14 +42,18 @@ class HomeMainFragment : BaseFragment() {
         rootview.mode_btn.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
 
-                RxBus.get().post(Anniation.CLASSIFY)
+                RxBus.get().post(Anniation.CLASSIFY,this)
+
+                Log.e("event:",Anniation.CLASSIFY)
 
 
             }
         })
 
         rootview.search_btn.setOnClickListener {
-           RxBus.get().post(Anniation.SEARCH)
+           RxBus.get().post(Anniation.SEARCH,this)
+
+            Log.e("event:",Anniation.SEARCH)
         }
 
 

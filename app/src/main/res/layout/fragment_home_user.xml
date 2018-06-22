@@ -1,0 +1,178 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context="kaiyan.lh.cn.kaiyanvideo.view.userPage.HomeUserFragment">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_menu_more"
+        android:background="#00000000"
+        android:layout_margin="10dp"
+        android:id="@+id/user_more"
+        android:layout_alignParentRight="true"/>
+
+
+    <kaiyan.lh.cn.kaiyanvideo.view.thirdView.CircleImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/user_icon"
+        android:src="@drawable/pgc_default_avatar"
+        app:border_width="1dp"
+        app:border_overlay="true"
+        app:border_color="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_name"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/user_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        tools:text="I can do all things"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_message"
+        tools:text="点击登录即可发表评论及同步已喜欢视频"
+        android:textColor="@color/grey"
+        android:layout_below="@+id/user_name"
+        android:layout_centerHorizontal="true"
+        android:textSize="12dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/user_message"
+    android:layout_marginTop="20dp"
+    android:id="@+id/user_numlun"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_heart"
+            android:src="@drawable/ic_grey_heart"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_like"
+            android:layout_toRightOf="@+id/user_heart"
+            android:layout_centerVertical="true"
+            android:text="@string/user_like"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:src="@drawable/abc_ab_share_pack_mtrl_alpha"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_cache"
+            android:src="@drawable/menu_download_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_video"
+            android:layout_toRightOf="@+id/user_cache"
+            android:layout_centerVertical="true"
+            android:text="@string/user_cache"/>
+
+    </RelativeLayout>
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/user_numlun"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:textSize="12dp"
+            android:text="@string/user_att"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:text="@string/user_history"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:text="@string/user_advise"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:text="@string/user_give"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

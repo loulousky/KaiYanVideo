@@ -1,4 +1,4 @@
-package kaiyan.lh.cn.kaiyanvideo.view.attationPage
+package kaiyan.lh.cn.kaiyanvideo.view.nofiyPage
 
 
 import android.os.Bundle
@@ -10,34 +10,28 @@ import kaiyan.lh.cn.kaiyanvideo.view.BaseFragment
 
 /**
  * A simple [Fragment] subclass.
- * Use the [WorkFragment.newInstance] factory method to
+ * Use the [GovFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class WorkFragment : BaseFragment() {
+class GovFragment : BaseFragment() {
     override fun setLayout(): Int {
-       return R.layout.fragment_work
+       return R.layout.fragment_gov
     }
 
     override fun BindView(savedInstanceState: Bundle?, rootview: View) {
 
+
     }
 
 
-
-
     companion object {
-        fun newInstance(): WorkFragment {
-            val fragment = WorkFragment()
+        fun newInstance(): GovFragment {
+            val fragment = GovFragment()
             val args = Bundle()
+
             fragment.arguments = args
             return fragment
         }
     }
-
-
-
-
-
-
 
 }// Required empty public constructor
