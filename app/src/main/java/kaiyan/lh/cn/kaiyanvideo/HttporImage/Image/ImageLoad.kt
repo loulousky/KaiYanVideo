@@ -8,11 +8,20 @@ import android.widget.ImageView
  * 图片加载关联
  */
 class ImageLoad(context: Context) : ImageUtil(context) {
+
     private var context: Context = context
-    private lateinit var imageutil: ImageUtil
+    private  var imageutil: ImageUtil?=null
+    init{
+      if(imageutil==null){
+
+          imageutil=GildUtils(context);
+
+     }
+    }
     companion object {
         fun getInstance(context: Context): ImageLoad {
             val imageload: ImageLoad = ImageLoad(context);
+
             return imageload;
         }
     }
@@ -24,21 +33,21 @@ class ImageLoad(context: Context) : ImageUtil(context) {
     }
 
     fun getImageUtils(): ImageUtil {
-        return this.imageutil;
+        return this.imageutil!!;
     }
 
 
     override fun Init(context: Context) {
-        imageutil.Init(context)
+        //初始化一些操作
 
     }
 
     override fun load(view: ImageView, url: String) {
-        imageutil.load(view, url)
+        imageutil?.load(view, url)
     }
 
     override fun load(view: ImageView, url: String, callback: ImageCallBak) {
-        imageutil.load(view, url, callback)
+        imageutil?.load(view, url, callback)
     }
 
 

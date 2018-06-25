@@ -7,9 +7,13 @@ import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import kaiyan.lh.cn.kaiyanvideo.Data.Categories;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -66,7 +70,15 @@ public class RetrofitUtils implements HttpUtils {
         //具体操作
         RetrofitApi api=retrofit.create(RetrofitApi.class);
         switch (url){
-            case RetrofitApi.Home:
+            case RetrofitApi.Categories:
+              Observable<ArrayList<Categories>> list=api.getCategoryData();
+              if(list==null){
+                  callBack.error();
+              }else {
+
+                  callBack.success(list.subscribeOn(io.reactivex.schedulers.Schedulers.io()).observeOn(AndroidSchedulers.mainThread()));
+              }
+
 
                 break;
 
@@ -77,7 +89,10 @@ public class RetrofitUtils implements HttpUtils {
         //具体操作
         RetrofitApi api=retrofit.create(RetrofitApi.class);
         switch (url){
-            case RetrofitApi.Home:
+            case RetrofitApi.Categories:
+
+
+
 
                 break;
 

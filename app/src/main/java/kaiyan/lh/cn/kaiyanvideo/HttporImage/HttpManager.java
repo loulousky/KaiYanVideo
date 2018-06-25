@@ -1,6 +1,5 @@
 package kaiyan.lh.cn.kaiyanvideo.HttporImage;
 
-import android.app.Application;
 import android.content.Context;
 
 import java.util.Map;
@@ -16,20 +15,24 @@ public class HttpManager implements HttpUtils{
 
     private static HttpManager httpManager;
     private HttpUtils httpUtils;
+
     private HttpManager(){
 
     }
-    public static HttpManager getInstance(Application application){
+    public static HttpManager getInstance(){
        if(httpManager==null){
            synchronized (HttpManager.class){
+
                httpManager=new HttpManager();
+
            }
        }
        return httpManager;
     }
     //初始化后必须设置
-    public void setHttpUtils(HttpUtils httpUtils){
+    public void setHttpUtils(HttpUtils httpUtils,Context context) throws HttpExcepter {
         this.httpUtils=httpUtils;
+        init(context);
     }
     @Override
     public void init(Context context) throws HttpExcepter {

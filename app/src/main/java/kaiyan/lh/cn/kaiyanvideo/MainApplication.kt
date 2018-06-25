@@ -2,6 +2,7 @@ package kaiyan.lh.cn.kaiyanvideo
 
 import android.support.multidex.MultiDexApplication
 import kaiyan.lh.cn.kaiyanvideo.HttporImage.HttpManager
+import kaiyan.lh.cn.kaiyanvideo.HttporImage.Image.ImageLoad
 import kaiyan.lh.cn.kaiyanvideo.HttporImage.RetrofitUtils
 import me.yokeyword.fragmentation.Fragmentation
 import me.yokeyword.fragmentation.helper.ExceptionHandler
@@ -17,8 +18,9 @@ class MainApplication :MultiDexApplication(){
     override fun onCreate() {
         super.onCreate()
         myapp=this
-        HttpManager.getInstance(this).setHttpUtils(RetrofitUtils());//初始化应用的网络请求框架
-        initFragment()
+        HttpManager.getInstance().setHttpUtils(RetrofitUtils(),this);//初始化应用的网络请求框架
+        ImageLoad.getInstance(this)//初始化图片请求
+        initFragment()//初始化fragment框架
 
 
     }

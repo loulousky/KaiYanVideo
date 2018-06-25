@@ -7,10 +7,10 @@ package kaiyan.lh.cn.kaiyanvideo.HttporImage;
 
 public class HttpUrlCommon {
 
+    public static final String BaseUrl="http://baobab.kaiyanapp.com/api/";
 
+    public static final String Categories="v4/categories";//分类
 
-
-    public static final String BaseUrl="";
 
 
 }
