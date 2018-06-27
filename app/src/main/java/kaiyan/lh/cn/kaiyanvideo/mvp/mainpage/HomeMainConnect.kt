@@ -1,37 +1,24 @@
 package kaiyan.lh.cn.kaiyanvideo.mvp.mainpage
+import kaiyan.lh.cn.kaiyanvideo.Data.Categories
+import kaiyan.lh.cn.kaiyanvideo.HttporImage.HttpResultCallBack
+import kaiyan.lh.cn.kaiyanvideo.mvp.BasePresenter
+import kaiyan.lh.cn.kaiyanvideo.mvp.BaseView
 
 /**
  * Created by admin on 2018/6/25.
  */
 class HomeMainConnect{
     companion object {
-        public interface Presenter{
-
-
-
+         interface Presenter<T>:BasePresenter<T>{
+            fun initcategoriesView()
         }
-
-
-        public interface View{
-
-            fun initcategoriesView();
-
+         interface View:BaseView{
+            fun initcategoriesView()
+            fun success(array:Array<String>,data:ArrayList<Categories>)
+            fun error()
         }
-
-
-        public interface Mode{
-
-            fun loadcategories(url:String);
-
+         interface Mode{
+            fun <T>loadcategories(url:String,callback: HttpResultCallBack<T>)
         }
-
-
-
-
-
-
-
-
     }
-
 }

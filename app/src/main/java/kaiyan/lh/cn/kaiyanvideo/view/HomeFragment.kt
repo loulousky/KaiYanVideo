@@ -7,8 +7,8 @@ import com.flyco.tablayout.listener.CustomTabEntity
 import com.hwangjr.rxbus.RxBus
 import com.hwangjr.rxbus.annotation.Subscribe
 import com.hwangjr.rxbus.annotation.Tag
+import kaiyan.lh.cn.kaiyanvideo.Data.TabEntity
 import kaiyan.lh.cn.kaiyanvideo.R
-import kaiyan.lh.cn.kaiyanvideo.entity.TabEntity
 import kaiyan.lh.cn.kaiyanvideo.view.anniation.Anniation
 import kaiyan.lh.cn.kaiyanvideo.view.attationPage.HomeAttationFragment
 import kaiyan.lh.cn.kaiyanvideo.view.attationPage.PublicFragment

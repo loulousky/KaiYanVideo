@@ -6,9 +6,9 @@ package kaiyan.lh.cn.kaiyanvideo.mvp
 
 
 
-interface BaseView<T>{
+interface BaseView{
 
-    var mypresenter:T //关联的中间者
+
 
     fun ConnectPresenter();//关联中间者
 

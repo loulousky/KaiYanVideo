@@ -1,4 +1,4 @@
-package kaiyan.lh.cn.kaiyanvideo.entity
+package kaiyan.lh.cn.kaiyanvideo.Data
 
 import com.flyco.tablayout.listener.CustomTabEntity
 

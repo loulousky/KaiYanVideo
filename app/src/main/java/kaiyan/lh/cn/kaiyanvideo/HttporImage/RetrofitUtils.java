@@ -75,8 +75,8 @@ public class RetrofitUtils implements HttpUtils {
               if(list==null){
                   callBack.error();
               }else {
-
-                  callBack.success(list.subscribeOn(io.reactivex.schedulers.Schedulers.io()).observeOn(AndroidSchedulers.mainThread()));
+                  callBack.success(list.subscribeOn(io.reactivex.schedulers.Schedulers.io()).
+                                        observeOn(AndroidSchedulers.mainThread()));
               }
 
 
@@ -90,9 +90,6 @@ public class RetrofitUtils implements HttpUtils {
         RetrofitApi api=retrofit.create(RetrofitApi.class);
         switch (url){
             case RetrofitApi.Categories:
-
-
-
 
                 break;
 
