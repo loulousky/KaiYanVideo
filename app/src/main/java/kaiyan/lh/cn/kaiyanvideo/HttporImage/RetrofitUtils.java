@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import kaiyan.lh.cn.kaiyanvideo.Data.Categories;
+import kaiyan.lh.cn.kaiyanvideo.Data.GovNews;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -78,9 +79,22 @@ public class RetrofitUtils implements HttpUtils {
                   callBack.success(list.subscribeOn(io.reactivex.schedulers.Schedulers.io()).
                                         observeOn(AndroidSchedulers.mainThread()));
               }
-
-
                 break;
+
+            case RetrofitApi.GOVNEWS:
+                ArrayList<GovNews> data=new ArrayList<>();
+                for(int i=0;i<10;i++){
+                    GovNews news=new GovNews("官方通知","1天前",
+                            "开眼话题：请坦白：你向别人撒过什么谎？没有人没说过谎话，这个并不是孩子的专利，" +
+                                    "有些谎言奸诈，有些谎言善良。本期有奖话题，请说出你的曾说过的谎言吧",
+                            "http://www.baidu.com");
+                    data.add(news);
+                 }
+                callBack.success(data);
+
+
+
+
 
         }
     }

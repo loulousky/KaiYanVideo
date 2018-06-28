@@ -10,4 +10,7 @@
     <string name="user_history">观看记录</string>
     <string name="user_advise">意见反馈</string>
     <string name="user_give">我要投稿</string>
+    <string name="nouser_tip">别错过重要的信息</string>
+    <string name="nouser_tip_little">登录后即可查看评论回复、点赞及关注等通知信息</string>
+    <string name="logtip">登录</string>
 </resources>

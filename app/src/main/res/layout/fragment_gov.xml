@@ -2,12 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="kaiyan.lh.cn.kaiyanvideo.view.nofiyPage.GovFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+ <com.andview.refreshview.XRefreshView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:id="@+id/refreshView"
+     android:orientation="vertical"
+     app:autoRefresh="true">
+     <android.support.v7.widget.RecyclerView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/myrecyclerview">
+     </android.support.v7.widget.RecyclerView>
+ </com.andview.refreshview.XRefreshView>
 </FrameLayout>
